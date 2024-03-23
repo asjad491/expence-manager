@@ -33,7 +33,7 @@ const ExpenseList = ({ expenses, setExpenses, onDeleteExpense, onEditExpense, se
     const fileName = prompt('Enter file name to save expenses:');
     if (fileName) {
       try {
-        await axios.post('http://localhost:5000/api/save-expenses', {
+        await axios.post('http://expence-manager-s1.vercel.app/api/save-expenses', {
           filename: fileName,
           expenses: expenses
         });
@@ -49,7 +49,7 @@ const ExpenseList = ({ expenses, setExpenses, onDeleteExpense, onEditExpense, se
     const fileName = prompt('Enter file name to retrieve expenses:');
     if (fileName) {
       try {
-        const response = await axios.get('http://localhost:5000/api/get-expenses', {
+        const response = await axios.get('http://expence-manager-s1.vercel.app/api/get-expenses', {
           params: { filename: fileName }
         });
         const data = response.data;
