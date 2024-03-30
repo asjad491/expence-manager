@@ -33,7 +33,7 @@ const ExpenseList = ({ expenses, setExpenses, onDeleteExpense, onEditExpense, se
     const fileName = prompt('Enter file name to save expenses:');
     if (fileName) {
       try {
-        await axios.post('https://backend-production-ee92.up.railway.app/api/save-expenses', {
+        await axios.post('http://asjadafzaal-001-site1.gtempurl.com/api/save-expenses', {
           filename: fileName,
           expenses: expenses
         });
@@ -49,7 +49,7 @@ const ExpenseList = ({ expenses, setExpenses, onDeleteExpense, onEditExpense, se
     const fileName = prompt('Enter file name to retrieve expenses:');
     if (fileName) {
       try {
-        const response = await axios.get('https://backend-production-ee92.up.railway.app/api/get-expenses', {
+        const response = await axios.get('http://asjadafzaal-001-site1.gtempurl.com/api/get-expenses', {
           params: { filename: fileName }
         });
         const data = response.data;
